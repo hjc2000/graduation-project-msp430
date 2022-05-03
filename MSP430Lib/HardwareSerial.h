@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include <list>
 #include "driverlib.h"
-#include "myLib/CircularQueue.h"
+#include "CircularQueue.h"
 #include "myLib/Timer.h"
 
 using namespace std;
