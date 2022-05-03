@@ -1,6 +1,6 @@
 #include "hardware.h"
-#include "MSP430Lib/HardwareSerial.h"
-#include "myLib/Timer.h"
+#include "HardwareSerial.h"
+#include "Timer.h"
 
 #pragma region init 初始化
 /******************************************************/

@@ -2,7 +2,7 @@
 #define DS18B20Lib_h
 #include <stdint.h>
 #include "DigitalPinOperate.h"
-#include "myLib/Timer.h"
+#include "Timer.h"
 
 class DS18B20BaseOperate
 {

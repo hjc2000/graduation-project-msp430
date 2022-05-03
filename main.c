@@ -1,7 +1,7 @@
 #include "MspTar.h"
-#include "MSP430Lib/HardwareSerial.h"
+#include "HardwareSerial.h"
 #include "DS18B20.h"
-#include "myLib/Timer.h"
+#include "Timer.h"
 #include "hardware.h"
 
 /*按照依赖关系按顺序定义*/

@@ -25,10 +25,10 @@
 
 #include <stdint.h>
 #include "driverlib.h"
-#include "myLib/Timer.h"
+#include "Timer.h"
 #include "MspTar.h"
-#include "MSP430Lib/DigitalPinOperate.h"
-#include "Delegate/Delegate.h"
+#include "DigitalPinOperate.h"
+#include "Delegate.h"
 
 class BasicGpioOperation
 {
