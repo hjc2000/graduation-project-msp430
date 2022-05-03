@@ -1,0 +1,10 @@
+{
+    // "C_Cpp.autocompleteAddParentheses": true,
+    "C_Cpp.default.cppStandard": "c++14",
+    "C_Cpp.default.cStandard": "c11",
+    "editor.fontFamily": "Cascadia Mono",
+    "C_Cpp.intelliSenseEngine": "Tag Parser",
+    "editor.formatOnSave": true,
+    "editor.fontSize": 20,
+    "C_Cpp.errorSquiggles": "Enabled",
+}

@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "1",
+            "includePath": [
+                "C:\\ti\\ccs1100\\ccs\\ccs_base\\msp430\\include",
+                "${workspaceFolder}\\driverlib\\MSP430F5xx_6xx",
+                "C:\\ti\\ccs1100\\ccs\\tools\\compiler\\ti-cgt-msp430_21.6.0.LTS\\include",
+                "${workspaceFolder}"
+            ],
+            "defines": [
+                "__MSP430F5529__",
+                "DEPRECATED"
+            ],
+            "intelliSenseMode": "msvc-x64",
+            "compilerPath": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\Hostx64\\x64\\cl.exe"
+        }
+    ],
+    "version": 4
+}
