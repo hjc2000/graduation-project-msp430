@@ -1,0 +1,6 @@
+[submodule "UartTar"]
+	path = UartTar
+	url = https://github.com/hjc2000/UartTar.git
+[submodule "Delegate"]
+	path = Delegate
+	url = https://github.com/hjc2000/Delegate.git

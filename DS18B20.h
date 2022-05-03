@@ -28,6 +28,7 @@
 #include "myLib/Timer.h"
 #include "MspTar.h"
 #include "MSP430Lib/DigitalPinOperate.h"
+#include "Delegate/Delegate.h"
 
 class BasicGpioOperation
 {

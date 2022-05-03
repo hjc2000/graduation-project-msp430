@@ -1,9 +1,9 @@
 #ifndef MSPTAR_H
 #define MSPTAR_H
-#include "myLib/Tar.h"
+#include "UartTar/UartTar.h"
 #include "MSP430Lib/HardwareSerial.h"
 
-class MspTar : public Tar
+class MspTar : public UartTar
 {
 public:
     MspTar(void);
