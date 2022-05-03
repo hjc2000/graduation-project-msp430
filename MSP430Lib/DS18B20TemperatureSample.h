@@ -1,26 +1,27 @@
-#ifndef DS18B20TemperatureSample_h
-#define DS18B20TemperatureSample_h
+// #ifndef DS18B20TemperatureSample_h
+// #define DS18B20TemperatureSample_h
 
-#include "DS18B20Lib.h"
-#include <functional>
+// #include "DS18B20Lib.h"
+// #include <functional>
+// #include "Timer.h"
 
-class DS18B20TemperatureSample : public DS18B20BaseOperate
-{
-protected:
-    DS18B20TemperatureSample(uint8_t port, uint16_t pin);
-    void StartTemperatureSample(void);
-    virtual void OnGetTemperature(uint8_t *buff) = 0;
+// class DS18B20TemperatureSample : public DS18B20BaseOperate
+// {
+// public:
+//     DS18B20TemperatureSample(void);
+//     void StartTemperatureSample(void);
+//     virtual void OnGetTemperature(uint8_t *buff);
 
-private:
-    void OnResetDone(void) override;
+// private:
+//     void OnResetDone(void) override;
 
-    function<void(void)> m_f_ToDoOnResetDone;
+//     function<void(void)> m_f_ToDoOnResetDone;
 
-    void SendConvertCommand(void);
+//     void SendConvertCommand(void);
 
-    void IsConvertDone(void);
+//     void IsConvertDone(void);
 
-    void SendReadCommandAndRead(void);
-};
+//     void SendReadCommandAndRead(void);
+// };
 
-#endif; // DS18B20TemperatureSample.h
+// #endif; // DS18B20TemperatureSample.h

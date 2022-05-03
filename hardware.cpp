@@ -1,14 +1,14 @@
 #include "hardware.h"
 #include "HardwareSerial.h"
 #include "Timer.h"
+#include "driverlib.h"
 
-#pragma region init 初始化
 /******************************************************/
 /*************************初始化************************/
-const uint16_t init::freDCO = 28000; // DCO的频率
-const uint16_t init::ratio = freDCO / 4000;
+const uint16_t freDCO = 28000; // DCO的频率
+const uint16_t ratio = freDCO / 4000;
 
-void init::initSys(void)
+void initSys(void)
 {
     WDT_A_hold(WDT_A_BASE); //关闭看门狗
 
@@ -67,9 +67,7 @@ void init::initSys(void)
 }
 /*************************初始化************************/
 /******************************************************/
-#pragma endregion init 初始化
 
-#pragma region 中断服务程序
 /* 定时器中断 */
 #if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
 #pragma vector = TIMER0_A0_VECTOR
@@ -121,4 +119,3 @@ __interrupt
     }
     }
 }
-#pragma endregion 中断服务程序

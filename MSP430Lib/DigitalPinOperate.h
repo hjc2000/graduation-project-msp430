@@ -10,12 +10,12 @@ using namespace std;
  * 操作了。
  *
  */
-class DigitalPinOperate
+class DigitalPinOperater
 {
 public:
-    DigitalPinOperate(uint8_t port, uint16_t pin);
+    DigitalPinOperater(uint8_t port, uint16_t pin);
     void ChangePin(uint8_t port, uint16_t pin);
-    enum PinMode
+    enum class PinMode
     {
         input,            //输入模式
         output,           //输出模式
@@ -24,13 +24,8 @@ public:
     };
     void SetPinMode(PinMode mode);
     PinMode m_currentPinMode = PinMode::input; //当前的引脚模式
-    enum OutputMode
-    {
-        high,   //输出高电平
-        low,    //输出低电平
-        toggle, //翻转
-    };
-    void WriteToPin(OutputMode mode);
+    void WriteToPin(bool value);
+    void ToggleOutput(void);
     bool ReadPin(void);
 
 private:

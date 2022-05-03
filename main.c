@@ -1,25 +1,22 @@
 #include "MspTar.h"
 #include "HardwareSerial.h"
-#include "DS18B20.h"
 #include "Timer.h"
 #include "hardware.h"
-
-/*按照依赖关系按顺序定义*/
-Task task;
-Timer timer;
-Ticker ticker;
-
-HardwareSerial Serial;
-MspTar tar;
-DS18B20 ds18b20;
+#include "DS18B20TemperatureSample.h"
+#include "Task.h"
 
 int main(void)
 {
-    init::initSys();
+    // new Task();
+    // new Timer();
+    // new Ticker();
+    // new HardwareSerial();
+    // new MspTar();
+    initSys();
     Serial.begin();
     while (1)
     {
-        task.handle();
+        pTask->handle();
         timer.handle();
         __bis_SR_register(GIE);
     }

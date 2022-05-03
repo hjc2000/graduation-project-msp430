@@ -6,7 +6,7 @@ HardwareSerial::HardwareSerial(void)
     {
         startSend();
     };
-    task.add(fun);
+    pTask->add(fun);
 }
 
 void HardwareSerial::begin(void)

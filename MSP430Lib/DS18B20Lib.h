@@ -8,12 +8,12 @@ class DS18B20BaseOperate
 {
 protected:
     DS18B20BaseOperate(uint8_t port, uint16_t pin);
+    void delay(uint16_t us);
     void Reset(void);
     void WriteByte(uint8_t data);
     uint8_t ReadByte(void);
     void WriteBit(bool value);
     bool ReadBit(void);
-
     /**
      * @brief 重置完成时被回调
      *
@@ -24,16 +24,16 @@ private:
     //下拉总线
     void PullDown(void)
     {
-        pinOperator.WriteToPin(pinOperator.low);
+        pinOperator.WriteToPin(0);
     }
     //释放总线
     void Release(void)
     {
-        pinOperator.SetPinMode(pinOperator.input);
+        pinOperator.SetPinMode(DigitalPinOperater::PinMode::input);
     }
 
 private:
-    DigitalPinOperate pinOperator;
+    DigitalPinOperater pinOperator;
 };
 
 #endif // DS18B20Lib.h

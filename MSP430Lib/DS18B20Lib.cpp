@@ -1,6 +1,7 @@
 #include "DS18B20Lib.h"
 
-void delay(uint16_t us) //延迟，以us为单位
+//延迟，以us为单位
+void DS18B20BaseOperate::delay(uint16_t us)
 {
     for (volatile uint16_t i = 0; i < us; i++)
     {

@@ -6,7 +6,7 @@
  * @param port 选择端口
  * @param pin 选择引脚
  */
-DigitalPinOperate::DigitalPinOperate(uint8_t port, uint16_t pin)
+DigitalPinOperater::DigitalPinOperater(uint8_t port, uint16_t pin)
 {
     m_port = port;
     m_pin = pin;
@@ -14,25 +14,23 @@ DigitalPinOperate::DigitalPinOperate(uint8_t port, uint16_t pin)
     msp430上电后引脚默认状态就是输入*/
     SetPinMode(PinMode::input);
 }
-
 /**
  * @brief 重新选择一个引脚
  *
  * @param port
  * @param pin
  */
-void DigitalPinOperate::ChangePin(uint8_t port, uint16_t pin)
+void DigitalPinOperater::ChangePin(uint8_t port, uint16_t pin)
 {
     m_port = port;
     m_pin = pin;
 }
-
 /**
  * @brief 设置引脚模式。
  *
  * @param mode PinMode枚举量
  */
-void DigitalPinOperate::SetPinMode(PinMode mode)
+void DigitalPinOperater::SetPinMode(PinMode mode)
 {
     switch (mode)
     {
@@ -58,44 +56,50 @@ void DigitalPinOperate::SetPinMode(PinMode mode)
     }
     }
 }
-
 /**
  * @brief 对引脚进行写操作
  *
  * @param mode OutputMode枚举量
  */
-void DigitalPinOperate::WriteToPin(OutputMode mode)
+void DigitalPinOperater::WriteToPin(bool value)
 {
     //如果当前不是输出模式，先设置为输出模式
     if (m_currentPinMode != PinMode::output)
     {
         SetPinMode(PinMode::output);
     }
-
-    switch (mode)
+    switch (value)
     {
-    case OutputMode::high:
-    {
-        GPIO_setOutputHighOnPin(m_port, m_pin);
-    }
-    case OutputMode::low:
+    case 0:
     {
         GPIO_setOutputLowOnPin(m_port, m_pin);
     }
-    case OutputMode::toggle:
+    case 1:
     {
-        GPIO_toggleOutputOnPin(m_port, m_pin);
+        GPIO_setOutputHighOnPin(m_port, m_pin);
     }
     }
 }
-
+/**
+ * @brief 翻转引脚输出
+ *
+ */
+void DigitalPinOperater::ToggleOutput(void)
+{
+    //如果当前不是输出模式，先设置为输出模式
+    if (m_currentPinMode != PinMode::output)
+    {
+        SetPinMode(PinMode::output);
+    }
+    GPIO_toggleOutputOnPin(m_port, m_pin);
+}
 /**
  * @brief 读取引脚状态
  *
  * @return true 引脚为高电平
  * @return false
  */
-bool DigitalPinOperate::ReadPin(void)
+bool DigitalPinOperater::ReadPin(void)
 {
     //如果引脚当前模式不为输入，先设置为输入
     if (m_currentPinMode != PinMode::input)

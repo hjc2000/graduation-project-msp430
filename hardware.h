@@ -5,15 +5,11 @@
 #ifndef HARDWARE_H
 #define HARDWARE_H
 
-#include "driverlib.h"
 #include <stdint.h>
 
 /* 进行系统的初始化 */
-namespace init
-{
-    void initSys(void);
-    extern const uint16_t freDCO;
-    extern const uint16_t ratio;
-}
+void initSys(void);
+extern const uint16_t freDCO;
+extern const uint16_t ratio;
 
 #endif // HARDWARE_H

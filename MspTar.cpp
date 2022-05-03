@@ -11,7 +11,7 @@ void MspTar::Init(void)
     {
         Handle();
     };
-    task.add(fun);
+    pTask->add(fun);
 }
 
 void MspTar::Handle(void)
